@@ -1,5 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap");
 
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0f172a;
+  --color-paper: #f8fafc;
+  --color-canvas: #fffaf0;
+  --color-surface: #ffffff;
+  --color-line: #e2e8f0;
+  --color-mist: #cbd5e1;
+  --color-fog: #e5e7eb;
+  --color-cloud: #f1f5f9;
+  --color-muted: #64748b;
+  --color-accent: #0ea5e9;
+  --color-accent-strong: #0369a1;
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
