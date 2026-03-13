@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+export interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+---
+
+<article class="panel group overflow-hidden p-6 shadow-glow">
+  <div class="mb-5 flex items-start justify-between gap-4">
+    <div>
+      <p class="mb-2 text-xs uppercase tracking-[0.24em] text-accent">{project.data.category}</p>
+      <h3 class="text-2xl font-semibold text-white">{project.data.title}</h3>
+    </div>
+    <span class="rounded-full border border-white/10 px-3 py-1 text-xs text-mist/70">
+      {project.data.publishDate.getFullYear()}
+    </span>
+  </div>
+  <p class="text-sm leading-7 text-mist/70">{project.data.summary}</p>
+  <div class="mt-6 flex flex-wrap gap-2">
+    {project.data.stack.map((item) => <span class="rounded-full bg-white/5 px-3 py-1 text-xs text-mist/70">{item}</span>)}
+  </div>
+  <a
+    href={`/projects/${project.slug}/`}
+    class="mt-8 inline-flex items-center gap-2 text-sm font-medium text-signal group-hover:text-white"
+  >
+    View case study
+    <span aria-hidden="true">→</span>
+  </a>
+</article>

@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+
+const projects = (await getCollection("projects")).sort(
+  (a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime()
+);
+
+const categories = ["design3d", "software", "electrical"] as const;
+---
+
+<BaseLayout
+  title="Projects | Arif Engineer"
+  description="Project archive covering 3D design, software engineering, and electrical systems."
+>
+  <section class="shell py-20">
+    <span class="eyebrow">Project archive</span>
+    <h1 class="section-title mt-6">Built for practical engineering outcomes</h1>
+    <p class="section-copy mt-4">
+      Each project includes delivery context, implementation detail, and the systems thinking behind the final result.
+    </p>
+
+    <div class="mt-8 flex flex-wrap gap-3">
+      {categories.map((category) => <span class="rounded-full border border-white/10 px-4 py-2 text-sm text-mist/75">{category}</span>)}
+    </div>
+
+    <div class="mt-12 grid gap-6 lg:grid-cols-2">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,15 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#09111f"/>
+  <rect x="72" y="72" width="1056" height="486" rx="32" fill="#0f1a30" stroke="#57d0ff" stroke-opacity="0.25"/>
+  <path d="M72 182H1128" stroke="#57d0ff" stroke-opacity="0.15"/>
+  <path d="M72 302H1128" stroke="#57d0ff" stroke-opacity="0.08"/>
+  <path d="M72 422H1128" stroke="#57d0ff" stroke-opacity="0.08"/>
+  <circle cx="184" cy="182" r="48" fill="#57d0ff" fill-opacity="0.12"/>
+  <circle cx="1024" cy="422" r="84" fill="#99f7d2" fill-opacity="0.08"/>
+  <text x="148" y="282" fill="#D9E2F2" font-family="Arial, sans-serif" font-size="64" font-weight="700">
+    Engineering Portfolio
+  </text>
+  <text x="148" y="348" fill="#57D0FF" font-family="Arial, sans-serif" font-size="28" font-weight="400">
+    Astro • TypeScript • Tailwind • Static-ready for Cloudflare Pages
+  </text>
+</svg>

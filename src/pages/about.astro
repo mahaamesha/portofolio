@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="About | Arif Engineer"
+  description="About page for an engineering-focused portfolio covering software, 3D design, and electrical systems."
+>
+  <section class="shell py-20">
+    <span class="eyebrow">About</span>
+    <div class="mt-6 grid gap-10 lg:grid-cols-[1fr_0.9fr]">
+      <div>
+        <h1 class="section-title">Engineering with discipline and clarity</h1>
+        <p class="mt-5 max-w-3xl text-lg leading-8 text-mist/75">
+          My work sits at the overlap of digital products, physical systems, and manufacturable design. I care about interfaces that feel intentional, systems that are maintainable, and documentation that helps teams move faster.
+        </p>
+        <p class="mt-5 max-w-3xl text-base leading-8 text-mist/75">
+          Over the last few years, I have supported teams with CAD-driven concept development, web application delivery, automation workflows, panel and control design, and engineering communication that bridges stakeholders from idea to release.
+        </p>
+      </div>
+      <div class="panel p-6">
+        <h2 class="text-xl font-semibold text-white">Capabilities</h2>
+        <div class="mt-6 grid gap-4">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <p class="text-sm uppercase tracking-[0.24em] text-accent">3D Design</p>
+            <p class="mt-2 text-sm leading-7 text-mist/75">Product concepts, enclosure design, rapid prototyping workflows, and visualization for stakeholder review.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <p class="text-sm uppercase tracking-[0.24em] text-copper">Software</p>
+            <p class="mt-2 text-sm leading-7 text-mist/75">Astro, TypeScript, frontend systems, dashboards, content architecture, and deployment-ready static experiences.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <p class="text-sm uppercase tracking-[0.24em] text-signal">Electrical</p>
+            <p class="mt-2 text-sm leading-7 text-mist/75">Controls thinking, component selection, panel layout support, testing workflows, and field-ready documentation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

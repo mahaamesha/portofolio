@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Contact | Arif Engineer"
+  description="Contact page for engineering collaboration and project inquiries."
+>
+  <section class="shell py-20">
+    <span class="eyebrow">Contact</span>
+    <div class="mt-6 grid gap-10 lg:grid-cols-[1fr_0.95fr]">
+      <div>
+        <h1 class="section-title">Let’s build something useful</h1>
+        <p class="mt-5 max-w-2xl text-lg leading-8 text-mist/75">
+          If you need help with a digital product, an engineering prototype, or cross-disciplinary technical execution, I’d be glad to hear the brief.
+        </p>
+        <div class="mt-8 space-y-4 text-sm text-mist/75">
+          <p><span class="text-white">Email:</span> hello@example.com</p>
+          <p><span class="text-white">Location:</span> Jakarta, Indonesia</p>
+          <p><span class="text-white">Availability:</span> Open for freelance and contract engagements</p>
+        </div>
+      </div>
+
+      <div class="panel p-6">
+        <h2 class="text-xl font-semibold text-white">Project checklist</h2>
+        <div class="mt-6 space-y-4 text-sm leading-7 text-mist/75">
+          <p>Share the project scope, target timeline, and whether the work is software, electrical, 3D design, or a blend of all three.</p>
+          <p>If you already have sketches, Git repositories, CAD files, diagrams, or briefs, include those so I can respond with a concrete next step.</p>
+        </div>
+        <a
+          href="mailto:hello@example.com?subject=Portfolio%20Project%20Inquiry"
+          class="mt-8 inline-flex rounded-full bg-accent px-6 py-3 text-sm font-semibold text-ink"
+        >
+          Email project details
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

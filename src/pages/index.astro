@@ -1,0 +1,78 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+const projects = await getCollection("projects");
+const featuredProjects = projects
+  .filter((project) => project.data.featured)
+  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+---
+
+<BaseLayout
+  title="Arif Engineer | Engineering Portfolio"
+  description="Engineering portfolio built with Astro, featuring 3D design, software systems, and electrical project delivery."
+>
+  <section class="shell py-20 sm:py-28">
+    <div class="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+      <div>
+        <span class="eyebrow">Engineering portfolio</span>
+        <h1 class="mt-6 max-w-4xl text-5xl font-bold tracking-tight text-white sm:text-6xl">
+          Designing reliable systems across
+          <span class="text-accent"> software</span>,
+          <span class="text-copper"> electrical</span>, and
+          <span class="text-signal"> 3D fabrication</span>.
+        </h1>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-mist/75">
+          I build production-ready interfaces, embedded prototypes, and manufacturable concepts with a bias for clean execution, measurable outcomes, and thoughtful documentation.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/projects" class="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-ink">
+            Explore projects
+          </a>
+          <a href="/contact" class="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white">
+            Start a conversation
+          </a>
+        </div>
+      </div>
+      <div class="panel relative overflow-hidden p-6">
+        <div class="absolute inset-0 bg-grid bg-[size:32px_32px] opacity-30"></div>
+        <div class="relative space-y-5">
+          <div class="rounded-2xl border border-white/10 bg-ink/70 p-5">
+            <p class="text-xs uppercase tracking-[0.24em] text-accent">Current focus</p>
+            <p class="mt-2 text-lg font-medium text-white">Engineering systems that ship cleanly and scale with confidence.</p>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-3">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="text-3xl font-bold text-white">12+</p>
+              <p class="mt-1 text-sm text-mist/65">Cross-discipline builds</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="text-3xl font-bold text-white">3</p>
+              <p class="mt-1 text-sm text-mist/65">Specialties</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="text-3xl font-bold text-white">100%</p>
+              <p class="mt-1 text-sm text-mist/65">Static deployable</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="shell pb-20">
+    <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <p class="eyebrow">Featured case studies</p>
+        <h2 class="section-title mt-4">Recent work with measurable impact</h2>
+      </div>
+      <p class="section-copy">
+        A selected view into engineering work spanning product visualization, full-stack software delivery, and industrial electrical systems.
+      </p>
+    </div>
+    <div class="mt-10 grid gap-6 lg:grid-cols-3">
+      {featuredProjects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
+</BaseLayout>
